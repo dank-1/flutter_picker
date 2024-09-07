@@ -479,11 +479,12 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
       child: picker.title == null
           ? SizedBox()
           : DefaultTextStyle(
-              style: (theme!.textTheme.headline6 ?? theme!.textTheme.titleLarge)
-                      ?.copyWith(
-                    fontSize: Picker.DefaultTextSize,
-                  ) ??
-                  TextStyle(fontSize: Picker.DefaultTextSize),
+              style:
+                  (theme!.textTheme.titleLarge ?? theme!.textTheme.titleLarge)
+                          ?.copyWith(
+                        fontSize: Picker.DefaultTextSize,
+                      ) ??
+                      TextStyle(fontSize: Picker.DefaultTextSize),
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               child: picker.title!),
@@ -736,7 +737,7 @@ abstract class PickerAdapter<T> {
                         : Colors.black87,
                     fontFamily: theme == null
                         ? ""
-                        : theme.textTheme.headline6?.fontFamily,
+                        : theme.textTheme.titleLarge?.fontFamily,
                     fontSize: Picker.DefaultTextSize),
             child: child != null
                 ? (isSel && picker!.selectedIconTheme != null
@@ -781,7 +782,7 @@ abstract class PickerAdapter<T> {
                     fontSize: _txtSize,
                     fontFamily: theme == null
                         ? ""
-                        : theme.textTheme.headline6?.fontFamily),
+                        : theme.textTheme.titleLarge?.fontFamily),
             child: Wrap(
               children: items,
             )));
